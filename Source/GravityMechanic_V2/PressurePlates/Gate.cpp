@@ -19,25 +19,6 @@ AGate::AGate()
 	ArrivalScenePoint = CreateDefaultSubobject<USceneComponent>(TEXT("ArrivalScenePoint"));
 	ArrivalScenePoint->SetupAttachment(RootComponent);
 }
-//
-// void AGate::MoveGate(bool bIsOpen)
-// {
-// 	const FRotator ZeroRotator;
-// 	const TEnumAsByte<EMoveComponentAction::Type> MoveAction = EMoveComponentAction::Move;
-// 	const FLatentActionInfo LatentInfo;
-// 	
-// 	if (bIsOpen)
-// 	{
-// 		UKismetSystemLibrary::MoveComponentTo(GateMesh, ArrivalScenePoint->GetRelativeLocation(), ZeroRotator, true, true, 1.0f,
-// 			false, MoveAction, LatentInfo);
-// 		UE_LOG(LogTemp, Warning, TEXT("OPEN"))
-// 	}
-// 	else
-// 	{
-// 		UKismetSystemLibrary::MoveComponentTo(GateMesh, DefaultRelativeLocation, ZeroRotator, true, true, 1.0f,
-// 		false, MoveAction, LatentInfo);
-// 	}
-// }
 
 // Called when the game starts or when spawned
 void AGate::BeginPlay()
@@ -46,4 +27,21 @@ void AGate::BeginPlay()
 
 	DefaultRelativeLocation = GateMesh->GetRelativeLocation();
 	
+}
+
+void AGate::MoveGate(bool bIsOpen)
+{
+	const FLatentActionInfo LatentInfo;
+	
+	if (bIsOpen)
+	{
+		UKismetSystemLibrary::MoveComponentTo(GateMesh, ArrivalScenePoint->GetRelativeLocation(), FRotator::ZeroRotator, true, true, 1.0f,
+			false, EMoveComponentAction::Move, LatentInfo);
+		UE_LOG(LogTemp, Warning, TEXT("OPEN"))
+	}
+	else
+	{
+		UKismetSystemLibrary::MoveComponentTo(GateMesh, DefaultRelativeLocation, FRotator::ZeroRotator, true, true, 1.0f,
+		false, EMoveComponentAction::Move, LatentInfo);
+	}
 }

@@ -74,6 +74,12 @@ protected:
 public:
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCamera; }
-	
+
+	UFUNCTION(BlueprintPure)
+	FORCEINLINE float GetDefaultGravity() const { return DefaultGravity; }
+private:
+
+	UPROPERTY(EditAnywhere, Category = "Variables")
+	float DefaultGravity;
 
 };

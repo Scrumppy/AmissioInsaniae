@@ -15,8 +15,8 @@ public:
 	// Sets default values for this actor's properties
 	AGate();
 
-	// UFUNCTION(BlueprintCallable)
-	// void MoveGate(bool bIsOpen);
+	UFUNCTION(BlueprintCallable)
+	void MoveGate(bool bIsOpen);
 
 protected:
 	// Called when the game starts or when spawned
@@ -24,8 +24,6 @@ protected:
 
 
 private:
-	// UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
-	// UStaticMeshComponent* GateMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
 	UStaticMeshComponent* GateMesh;

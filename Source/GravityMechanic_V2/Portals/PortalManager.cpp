@@ -4,7 +4,7 @@
 #include "PortalManager.h"
 
 #include "EngineUtils.h"
-#include "MathLibrary.h"
+#include "../Libraries/MathLibrary.h"
 #include "Portal.h"
 #include "Components/SceneCaptureComponent2D.h"
 #include "Kismet/GameplayStatics.h"
@@ -95,10 +95,6 @@ void APortalManager::UpdatePortalView()
 			}
 		}
 	}
-}
-
-void APortalManager::Update(float DeltaTime)
-{
 }
 
 void APortalManager::SetControllerOwner(AMainPlayerController* NewOwner)

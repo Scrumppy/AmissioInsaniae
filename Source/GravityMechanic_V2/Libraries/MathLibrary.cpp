@@ -94,16 +94,14 @@ bool UMathLibrary::IsPointInsideBox(FVector Point, UBoxComponent* Box)
 {
 	if( Box != nullptr )
 	{
-		// From :
-		// https://stackoverflow.com/questions/52673935/check-if-3d-point-inside-a-box/52674010
+		
+		FVector Center = Box->GetComponentLocation();
+		FVector Half = Box->GetScaledBoxExtent();
+		FVector DirectionX = Box->GetForwardVector();
+		FVector DirectionY = Box->GetRightVector();
+		FVector DirectionZ = Box->GetUpVector();
 
-		FVector Center      = Box->GetComponentLocation();
-		FVector Half        = Box->GetScaledBoxExtent();
-		FVector DirectionX  = Box->GetForwardVector();
-		FVector DirectionY  = Box->GetRightVector();
-		FVector DirectionZ  = Box->GetUpVector();
-
-		FVector Direction   = Point - Center;
+		FVector Direction = Point - Center;
 
 		bool IsInside = FMath::Abs( FVector::DotProduct( Direction, DirectionX ) ) <= Half.X &&
 						FMath::Abs( FVector::DotProduct( Direction, DirectionY ) ) <= Half.Y &&

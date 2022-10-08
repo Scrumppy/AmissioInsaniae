@@ -3,7 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "PlayerCharacter.h"
+#include "../PlayerController/MainPlayerController.h"
+#include "Components/ArrowComponent.h"
 #include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
 #include "Portal.generated.h"

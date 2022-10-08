@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "MainPlayerController.h"
+#include "../PlayerController/MainPlayerController.h"
 #include "GameFramework/Actor.h"
 #include "PortalManager.generated.h"
 
@@ -21,8 +21,6 @@ public:
 	void SetPortalClass(TSubclassOf<class APortal> Class);
 
 	void UpdatePortalView();
-	// Manual Tick
-	void Update( float DeltaTime );
 
 protected:
 	// Called when the game starts or when spawned

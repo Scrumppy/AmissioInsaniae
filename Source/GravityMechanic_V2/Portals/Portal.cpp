@@ -4,9 +4,6 @@
 #include "Portal.h"
 
 #include "EngineUtils.h"
-#include "MainPlayerController.h"
-#include "MathLibrary.h"
-#include "PlayerCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "Components/ArrowComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -14,6 +11,8 @@
 #include "Engine/TextureRenderTarget2D.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "GravityMechanic_V2/Libraries/MathLibrary.h"
+#include "GravityMechanic_V2/Player/PlayerCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 
@@ -22,7 +21,7 @@ APortal::APortal()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	bIsActive = true;
+	bIsActive = true
 	
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
 	SetRootComponent(RootComponent);

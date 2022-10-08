@@ -2,6 +2,8 @@
 
 
 #include "MainPlayerController.h"
+#include "../Portals/Portal.h"
+#include "../Portals/PortalManager.h"
 
 void AMainPlayerController::BeginPlay()
 {
